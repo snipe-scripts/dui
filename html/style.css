@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700&display=swap');
+
+:root {
+    --bg-secondary: #020610;
+    --bg-red: #ef4444;
+    --bg-tertiary: rgba(255, 255, 255, 0.082);
+    --border-secondary: rgba(77, 75, 89, 0.8);
+    --text-primary: #ffffff;
+    --brand-blue:  #020610;
+    --accent: #22c55e;
+    --gradient-blue: radial-gradient(circle, #3b82f6, #347af4, #2e73f1, #296bee, #2563eb);
+
+    --green-gradient: linear-gradient(180deg, rgba(34,197,94,1) 0%, rgba(22,163,74,1) 100%);
+    --red-gradient: linear-gradient(180deg, rgba(239,68,68,1) 0%, rgba(209,51,51,1) 100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Cairo', sans-serif;
+}
+
+*::selection {
+    background: var(--brand-blue);
+    color: var(--text-primary);
+}
+
+html {
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+}
+
+.printer-wrapper {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    line-height: 1.6vh;
+    display: none;
+    place-items: center;
+}
+
+.printer-container {
+    display: none;
+    width: 30vh;
+    height: 14vh;
+    background-color: var(--bg-secondary);
+    border-radius: 1vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 0.2vh solid var(--border-secondary);
+    -webkit-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.64);
+    -moz-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.64);
+    box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.64);
+
+}
+
+.printer-input {
+    display: block;
+    text-decoration: none;
+    background: transparent;
+    color: var(--text-primary);
+    outline: none;
+    border: none;
+    text-align: center;
+    font-size: 1.4vh;
+    transition: 0.2s ease-in-out;
+    background: var(--bg-tertiary);
+    border-radius: 0.4vh;
+    padding: 0.4vh 0.6vh;
+    letter-spacing: 0.06vh;
+    width: 85%;
+    margin-bottom: 1.4vh;
+}
+
+.btn-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.closebtn,
+.printbtn {
+    background: var(--red-gradient);
+    background-repeat: no-repeat;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    text-align: center;
+    text-decoration: none;
+    color: var(--text-primary);
+    font-size: 1.4vh;
+    border-radius: 10vh;
+    cursor: pointer;
+    padding: 0.4vh 0;
+    width: 8vh;
+    letter-spacing: 0.04vh;
+}
+
+.printbtn {
+    margin-left: 2vh;
+    background: var(--green-gradient);
+}
