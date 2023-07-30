@@ -6,7 +6,7 @@ With this script the opportunities are endless. You can create as many screens a
 - This particular script lets you create as many dui screens you want with 4 simple steps
 - Steps
     - Create a ox lib polyzone around the room where the screen is present. 
-    - Create a target polyzone for the screen to target on.
+    - Create a target boxzone for the screen to target on.
     - Go to the maps folder, look for the texture dictionary and texture name of the screen you want to use
     - Add all the information in client/zones.lua as I have done in the example
 
