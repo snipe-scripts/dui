@@ -44,7 +44,7 @@ CreateThread(function()
         exports["qb-target"]:AddBoxZone(v.zone.name, v.target.coords, v.target.length, v.target.width, {
             name=v.zone.name,
             heading=v.target.heading,
-            debugPoly = true,
+            debugPoly = false,
             minZ=v.target.minZ,
             maxZ=v.target.maxZ
         },{
