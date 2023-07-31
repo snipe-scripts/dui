@@ -95,6 +95,10 @@ function removeImage(name)
     RemoveReplaceTexture(DUIZones[name].duiInfo.textDict, DUIZones[name].duiInfo.textName)
 end
 
+RegisterNetEvent("dui:client:removeImage", function(room)
+    removeImage(room)
+end)
+
 
 RegisterNUICallback('CloseDocument', function()
     SetNuiFocus(false, false)
