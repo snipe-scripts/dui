@@ -82,6 +82,10 @@ function changeImage(name, duiInfo)
 end
 
 function removeImage(name)
+    TriggerServerEvent("dui:server:removeImage", name)
+end
+
+RegisterNetEvent("dui:client:removeImage", function(name)
     if currentRoom == nil then
         return
     end
@@ -93,11 +97,6 @@ function removeImage(name)
     end
     duiObj[name] = nil
     RemoveReplaceTexture(DUIZones[name].duiInfo.textDict, DUIZones[name].duiInfo.textName)
-    TriggerServerEvent("dui:server:removeImage", name)
-end
-
-RegisterNetEvent("dui:client:removeImage", function(name)
-    removeImage(name)
 end)
 
 
@@ -141,7 +140,6 @@ RegisterNetEvent("dui:client:syncTextures", function(room, url, width, height, d
         RemoveReplaceTexture(duiInfo.textDict, duiInfo.textName)
         duiObj[room] = nil
     end
-    
     local txd = CreateRuntimeTxd(currentRoom.."_txd")
     duiObj[currentRoom] = CreateDui(url, width, height)
     local dui = GetDuiHandle(duiObj[currentRoom])
