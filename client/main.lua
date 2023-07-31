@@ -93,10 +93,11 @@ function removeImage(name)
     end
     duiObj[name] = nil
     RemoveReplaceTexture(DUIZones[name].duiInfo.textDict, DUIZones[name].duiInfo.textName)
+    TriggerServerEvent("dui:server:removeImage", name)
 end
 
-RegisterNetEvent("dui:client:removeImage", function(room)
-    removeImage(room)
+RegisterNetEvent("dui:client:removeImage", function(name)
+    removeImage(name)
 end)
 
 
