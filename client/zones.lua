@@ -6,6 +6,7 @@ DUIZones = {
 
     -- mrpd dui's
     ["mrpd_room_1_classroom_projector"] = {
+        enabled = true, -- set to false to disable this screen
         zone = {
             name = "mrpd_room_1_classroom_projector",
             points = {
@@ -36,6 +37,7 @@ DUIZones = {
         job = "police",
     },
     ["mrpd_room_1_projector"] = {
+        enabled = true, -- set to false to disable this screen
         zone = {
             name = "mrpd_room_1_projector",
             points = {
@@ -63,6 +65,4 @@ DUIZones = {
         },
         job = "police",
     },
-
-    
 }

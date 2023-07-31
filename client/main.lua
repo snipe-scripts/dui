@@ -34,40 +34,42 @@ end
 
 CreateThread(function()
     for k, v in pairs(DUIZones) do
-        v.zone.onEnter = onEnter
-        v.zone.onExit = onExit
-        lib.zones.poly(v.zone)
+        if v.enabled then
+            v.zone.onEnter = onEnter
+            v.zone.onExit = onExit
+            lib.zones.poly(v.zone)
 
-        local name = v.zone.name
-        local duiInfo = v.duiInfo
-        local business = v.business
-        exports["qb-target"]:AddBoxZone(v.zone.name, v.target.coords, v.target.length, v.target.width, {
-            name=v.zone.name,
-            heading=v.target.heading,
-            debugPoly = false,
-            minZ=v.target.minZ,
-            maxZ=v.target.maxZ
-        },{
-            options = {
-                {
-                    action = function()
-                        changeImage(name, duiInfo)
-                    end,
-                    icon = "fas fa-laptop",
-                    label = "Change Image",
-                    job = v.job or "none"
+            local name = v.zone.name
+            local duiInfo = v.duiInfo
+            local business = v.business
+            exports["qb-target"]:AddBoxZone(v.zone.name, v.target.coords, v.target.length, v.target.width, {
+                name=v.zone.name,
+                heading=v.target.heading,
+                debugPoly = false,
+                minZ=v.target.minZ,
+                maxZ=v.target.maxZ
+            },{
+                options = {
+                    {
+                        action = function()
+                            changeImage(name, duiInfo)
+                        end,
+                        icon = "fas fa-laptop",
+                        label = "Change Image",
+                        job = v.job or "none"
+                    },
+                    {
+                        action = function()
+                            removeImage(name)
+                        end,
+                        icon = "fas fa-laptop",
+                        label = "Remove Image",
+                        job = v.job or "none"
+                    },
                 },
-                {
-                    action = function()
-                        removeImage(name)
-                    end,
-                    icon = "fas fa-laptop",
-                    label = "Remove Image",
-                    job = v.job or "none"
-                },
-            },
-            distance = 2.5
-        })
+                distance = 2.5
+            })
+        end
     end
 end)
 
