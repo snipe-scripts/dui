@@ -65,4 +65,33 @@ DUIZones = {
         },
         job = "police",
     },
+    ["weaslePD"] = { -- https://www.youtube.com/watch?v=QLZapqdB9JM (Thanks to Techmanmurphy)
+        enabled = false, -- set to false to disable this screen
+        zone = {
+            name = "weaslePD", -- https://nxp.tebex.io/package/4896304
+            points = {
+                vec3(-569.85546875, -922.92956542969, 23.0), 
+                vec3(-570.10565185547, -933.77026367188, 23.0), 
+                vec3(-572.38610839844, -936.06976318359, 23.0), 
+                vec3(-572.38757324219, -939.62341308594, 23.0), 
+                vec3(-560.17053222656, -940.19738769531, 23.0), 
+                vec3(-561.13952636719, -923.23004150391, 23.0)
+            },
+            thickness = 4.0,
+            debug = false,
+        },
+        duiInfo = {
+            textDict = "v_ilev_mm_screen", -- prop name if embeded 
+            textName = "script_rt_big_disp", -- 
+        },
+        target = {
+            coords = vector3(-565.50524902344, -923.41802978516, 24.920973968506),
+            length = 2.6,
+            width = 0.5,
+            heading = 0.0,
+            minZ=23.22,
+            maxZ=25.62,
+        },
+        job = "police",
+    },
 }
