@@ -94,4 +94,31 @@ DUIZones = {
         },
         job = "police",
     },
+    ["np_townhall_big_screen"] = { -- Shwntv
+        enabled = false, -- set to false to disable this screen
+        zone = {
+            name = "np_townhall_big_screen", --  https://3dstore.nopixel.net/
+            points = {
+                vec3(-527.98, -193.77, 38.0),
+                vec3(-538.59, -175.02, 38.0),
+                vec3(-521.14, -164.91, 38.0),
+                vec3(-510.68, -182.38, 38.0),
+            },
+            thickness = 15.0,
+            debug = false,
+        },
+        duiInfo = {
+            textDict = "np_town_hall_bigscreen",
+            textName = "projector_screen",
+        },
+        target = {
+            coords = vector3(-518.368286, -176.852142, 38.45),
+            length = 1.0,
+            width = 1.0,
+            heading = 270.0,
+            minZ=37.12,
+            maxZ=37.45
+        },
+        job = "doj",
+    },
 }
