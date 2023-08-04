@@ -121,4 +121,62 @@ DUIZones = {
         },
         job = "doj",
     },
+    ["pizzeria"] = { -- Gabz Pizzeria
+        enabled = false,
+        zone = {
+            name = "pizzeria", 
+            points = {
+                vector3(792.4, -769.0, 26.45), 
+                vector3(793.29, -746.39, 26.45),
+                vector3(816.16, -746.89, 26.45),
+                vector3(815.57, -770.02, 26.45),
+            },
+            thickness = 4.0,
+            debug = true,
+        },
+        dui = {
+            ["pizzeria_menu"] = {
+                ["duiInfo"] = {
+                    textDict = "sm_pizzeria_txd_02", -- prop name if embeded 
+                    textName = "pizzeria_menu",
+                },
+                target = {
+                    coords = vector3(814.27, -754.99, 26.78),
+                    length = 1.4,
+                    width = 1,
+                    heading = 0.0,
+                    minZ=27.58,
+                    maxZ=28.98
+                },
+            },
+            ["pizzeria-logo"] = {
+                duiInfo = {
+                    textDict = "sm_pizzeria_txd_01", -- prop name if embeded 
+                    textName = "maldini-logo", -- 
+                },
+                target = {
+                    coords = vector3(813.68, -752.89, 26.78),
+                    length = 1.4,
+                    width = 0.4,
+                    heading = 5.0,
+                    minZ=28.13,
+                    maxZ=29.33
+                },
+            },
+            ["pizzeria-drinks"] = {
+                duiInfo = {
+                    textDict = "sm_pizzeria_txd_02", -- prop name if embeded 
+                    textName = "pizzeria_dinks", -- 
+                },
+                target = {
+                    coords = vector3(814.13, -751.12, 26.78),
+                    length = 1,
+                    width = 1,
+                    heading = 0.0,
+                    minZ=28.38,
+                    maxZ=29.78
+                },
+            }
+        },
+    },
 }
