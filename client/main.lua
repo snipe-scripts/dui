@@ -168,21 +168,34 @@ function changeImage(name, duiInfo)
 end
 
 function removeImage(name)
-    TriggerServerEvent("dui:server:removeImage", name)
+    if multiScreens then
+        currentName = name
+    end
+    TriggerServerEvent("dui:server:removeImage", currentRoom, currentName)
 end
 
-RegisterNetEvent("dui:client:removeImage", function(name)
+RegisterNetEvent("dui:client:removeImage", function(room, duiInfo, name)
     if currentRoom == nil then
         return
     end
-    if currentRoom ~= name then
+    if currentRoom ~= room then
         return
     end
-    if duiObj[name] then
-        DestroyDui(duiObj[name])
+    if name then
+        if duiObj[room] then
+            if duiObj[room][name] then
+                DestroyDui(duiObj[room][name])
+                duiObj[room][name] = nil
+            end
+        end
+    else
+        if duiObj[room] then
+            DestroyDui(duiObj[room])
+            duiObj[room] = nil
+        end
     end
-    duiObj[name] = nil
-    RemoveReplaceTexture(DUIZones[name].duiInfo.textDict, DUIZones[name].duiInfo.textName)
+    RemoveReplaceTexture(duiInfo.textDict, duiInfo.textName)
+    -- RemoveReplaceTexture(DUIZones[name].duiInfo.textDict, DUIZones[name].duiInfo.textName)
 end)
 
 

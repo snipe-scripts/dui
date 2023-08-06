@@ -26,9 +26,20 @@ RegisterServerEvent("dui:server:changeImage", function(currentRoom, url, width, 
     TriggerClientEvent("dui:client:syncTextures", -1, currentRoom, url, width, height, currentDUIInfo, name)
 end)
 
-RegisterServerEvent("dui:server:removeImage", function(currentRoom)
+RegisterServerEvent("dui:server:removeImage", function(currentRoom, name)
+    local sendDUIInfo = nil
+    if name then
+        if duiInfo[currentRoom] then
+            sendDUIInfo = duiInfo[currentRoom][name]
+            duiInfo[currentRoom][name] = nil
+        end
+    else
+        sendDUIInfo = duiInfo[currentRoom]
+        
+        duiInfo[currentRoom] = nil
+    end
     duiInfo[currentRoom] = nil
-    TriggerClientEvent("dui:client:removeImage", -1, currentRoom)
+    TriggerClientEvent("dui:client:removeImage", -1, currentRoom, sendDUIInfo.duiInfo, name)
 end)
 
 lib.callback.register("dui:server:getCurrentDUI", function(source, currentRoom)
